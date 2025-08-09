@@ -25,3 +25,5 @@ logs
 
 # tsx refs
 *.tsx
+
+.github
