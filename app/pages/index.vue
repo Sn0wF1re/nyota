@@ -2,6 +2,18 @@
   <div class="min-h-screen bg-background text-foreground">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center bg-foreground text-background overflow-hidden pb-16 pt-8">
+      <!-- Video Background -->
+      <video
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        src="https://res.cloudinary.com/dx2quobqu/video/upload/v1754663776/nyota_bg_video_trim.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+      <!-- Tint Overlay -->
+      <div class="absolute inset-0 bg-foreground/70 z-0"></div>
+      <!-- Glow -->
       <div class="absolute inset-0">
         <Glow variant="center" class="opacity-30" />
       </div>
@@ -22,13 +34,13 @@
             </Button>
           </div>
         </div>
-        <div class="relative">
+        <!-- <div class="relative">
           <Mockup type="responsive" class="w-full aspect-video bg-primary/10 border-primary/20">
             <div class="w-full h-full bg-gradient-to-br from-primary/20 to-foreground/20 flex items-center justify-center">
               <NuxtImg src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop" alt="Kenya Safari" class="rounded-md object-cover w-full h-64" />
             </div>
           </Mockup>
-        </div>
+        </div> -->
       </div>
       <div class="absolute top-4 right-4 z-20">
         <Button variant="outline" class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-foreground rounded-full px-6 py-3 font-medium">
