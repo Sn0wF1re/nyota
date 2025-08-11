@@ -20,7 +20,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <Card
-            v-for="([key, pkg], idx) in Object.entries(packages)"
+            v-for="pkg in Object.values(packages)"
             :key="pkg.name"
             class="group cursor-pointer overflow-hidden border-primary/20 hover:border-primary transition-all"
           >
@@ -36,7 +36,7 @@
               <Button
                 size="sm"
                 class="mt-4 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
-                :to="`/packages/${key}`"
+                :to="`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`"
                 tag="NuxtLink"
               >
                 View Details
