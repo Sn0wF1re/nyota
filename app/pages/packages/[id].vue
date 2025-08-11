@@ -11,6 +11,9 @@
         <p class="text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl mx-auto font-sans">
           {{ pkg.description }}
         </p>
+        <div v-if="pkg.writeup" class="mt-8 text-base md:text-lg text-background/90 leading-relaxed max-w-3xl mx-auto font-sans">
+          {{ pkg.writeup }}
+        </div>
         <NuxtImg :src="pkg.image" :alt="pkg.name" class="rounded-md object-cover w-full h-64 mx-auto mt-8" />
       </div>
     </section>
