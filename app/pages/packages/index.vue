@@ -19,30 +19,31 @@
     <section class="py-24 bg-background">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card
+          <NuxtLink
             v-for="pkg in Object.values(packages)"
             :key="pkg.name"
-            class="group cursor-pointer overflow-hidden border-primary/20 hover:border-primary transition-all"
+            :to="`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`"
+            class="block w-full h-full"
           >
-            <CardHeader class="p-0 flex flex-col items-center">
-              <NuxtImg :src="pkg.image" :alt="pkg.name" class="w-full h-40 object-cover rounded-t-md" />
-            </CardHeader>
-            <CardContent class="p-4 flex flex-col gap-3 items-center">
-              <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif text-center">{{ pkg.name }}</CardTitle>
-              <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ pkg.description }}</CardDescription>
-              <div class="w-full flex flex-wrap justify-center gap-2 mt-2">
-                <span v-for="highlight in pkg.highlights" :key="highlight" class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">{{ highlight }}</span>
-              </div>
-              <Button
-                size="sm"
-                class="mt-4 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
-                :to="`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`"
-                tag="NuxtLink"
-              >
-                View Details
-              </Button>
-            </CardContent>
-          </Card>
+            <Card class="group cursor-pointer overflow-hidden border-primary/20 hover:border-primary transition-all">
+              <CardHeader class="p-0 flex flex-col items-center">
+                <NuxtImg :src="pkg.image" :alt="pkg.name" class="w-full h-40 object-cover rounded-t-md" />
+              </CardHeader>
+              <CardContent class="p-4 flex flex-col gap-3 items-center">
+                <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif text-center">{{ pkg.name }}</CardTitle>
+                <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ pkg.description }}</CardDescription>
+                <div class="w-full flex flex-wrap justify-center gap-2 mt-2">
+                  <span v-for="highlight in pkg.highlights" :key="highlight" class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">{{ highlight }}</span>
+                </div>
+                <Button
+                  size="sm"
+                  class="mt-4 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
+                >
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+          </NuxtLink>
         </div>
       </div>
     </section>
