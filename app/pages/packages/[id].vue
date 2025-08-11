@@ -4,7 +4,7 @@
       <div class="absolute inset-0">
         <Glow variant="center" class="opacity-30" />
       </div>
-      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8 pt-16">
         <h1 class="text-5xl md:text-6xl font-light leading-tight font-serif">
           {{ pkg.name }} Safari Package
         </h1>
