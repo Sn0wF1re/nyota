@@ -36,11 +36,11 @@
                 </div>
                 <NuxtLink
                   :to="`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`"
-                  class="w-full flex justify-center"
+                  class="flex justify-center w-full"
                 >
                   <Button
                     size="sm"
-                    class="mt-4 cursor-pointer bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
+                    class="mt-4 cursor-pointer bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition w-full max-w-xs"
                   >
                     View Details
                   </Button>
