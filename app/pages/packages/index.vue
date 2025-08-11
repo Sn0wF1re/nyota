@@ -24,7 +24,7 @@
             :key="pkg.name"
             class="block w-full h-full"
           >
-            <Card class="group cursor-pointer overflow-hidden border-primary/20 hover:border-primary transition-all">
+            <Card class="group overflow-hidden border-primary/20 hover:border-primary transition-all">
               <CardHeader class="p-0 flex flex-col items-center">
                 <NuxtImg :src="pkg.image" :alt="pkg.name" class="w-full h-40 object-cover rounded-t-md" />
               </CardHeader>
@@ -32,7 +32,7 @@
                 <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif text-center">{{ pkg.name }}</CardTitle>
                 <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ pkg.description }}</CardDescription>
                 <div class="w-full flex flex-wrap justify-center gap-2 mt-2 min-h-[40px]">
-                  <span v-for="highlight in pkg.highlights" :key="highlight" class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">{{ highlight }}</span>
+                  <span v-for="highlight in pkg.highlights" :key="highlight" class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow whitespace-nowrap">{{ highlight }}</span>
                 </div>
                 <NuxtLink
                   :to="`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`"
@@ -40,7 +40,7 @@
                 >
                   <Button
                     size="sm"
-                    class="mt-4 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
+                    class="mt-4 cursor-pointer bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition"
                   >
                     View Details
                   </Button>
