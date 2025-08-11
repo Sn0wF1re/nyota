@@ -30,7 +30,7 @@
               </CardHeader>
               <CardContent class="p-4 flex flex-col gap-3 items-center">
                 <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif text-center">{{ pkg.name }}</CardTitle>
-                <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ pkg.description }}</CardDescription>
+                <CardDescription class="text-foreground/70 text-sm font-sans text-center line-clamp-2 min-h-[6rem]">{{ pkg.description }}</CardDescription>
                 <div class="w-full flex flex-col items-center gap-2 mt-2 min-h-[40px]">
                   <span v-for="highlight in pkg.highlights" :key="highlight" class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">{{ highlight }}</span>
                 </div>
