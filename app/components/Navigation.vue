@@ -22,7 +22,7 @@
         </div>
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-[#f7f6f3]" @click="isMenuOpen = !isMenuOpen">
-          <component :is="isMenuOpen ? LucideX : LucideMenu" class="w-6 h-6" />
+          <component :is="isMenuOpen ? X : Menu" class="w-6 h-6" />
         </button>
       </div>
       <!-- Mobile Menu -->
@@ -39,7 +39,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { LucideMenu, LucideX } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
 const isMenuOpen = ref(false)
 const navItems = [
   { name: 'Home', url: '/' },
