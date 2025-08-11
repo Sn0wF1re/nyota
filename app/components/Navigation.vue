@@ -4,13 +4,9 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 bg-[#c5aa5e] rounded-full flex items-center justify-center">
-            <!-- Replace with lucide-vue-next Star icon -->
-            <Icon name="lucide:star" class="w-5 h-5 text-[#121820]" />
+          <div class="w-18 h-18 flex items-center justify-center">
+            <NuxtImg src="/nyota_logo.png" alt="Nyota Logo" width="400" height="400" />
           </div>
-          <span class="text-[#c5aa5e] text-xl font-light font-serif">
-            Nyota
-          </span>
         </div>
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
@@ -26,7 +22,7 @@
         </div>
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-[#f7f6f3]" @click="isMenuOpen = !isMenuOpen">
-          <Icon :name="isMenuOpen ? 'lucide:x' : 'lucide:menu'" class="w-6 h-6" />
+          <component :is="isMenuOpen ? LucideX : LucideMenu" class="w-6 h-6" />
         </button>
       </div>
       <!-- Mobile Menu -->
@@ -43,6 +39,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { LucideMenu, LucideX } from 'lucide-vue-next'
 const isMenuOpen = ref(false)
 const navItems = [
   { name: 'Home', url: '/' },
