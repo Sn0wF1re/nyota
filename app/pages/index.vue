@@ -10,6 +10,8 @@
         loop
         muted
         playsinline
+        preload="auto"
+        poster="https://res.cloudinary.com/dx2quobqu/image/upload/v1755079699/nyota_poster.jpg"
       ></video>
       <!-- Tint Overlay -->
       <div class="absolute inset-0 bg-foreground/70 z-0"></div>
