@@ -68,25 +68,21 @@
           <Card
             v-for="([key, country], idx) in Object.entries(countries)"
             :key="country.name"
-            class="group cursor-pointer overflow-hidden border-primary/20 hover:border-primary transition-all"
+            class="group overflow-hidden border-primary/20 hover:border-primary transition-all"
           >
-            <NuxtLink :to="`/destinations/${key}`" class="block w-full h-full">
-              <CardHeader class="p-0">
-                <NuxtImg :src="country.image" :alt="country.name" class="w-full h-40 object-cover rounded-t-md" />
-              </CardHeader>
-              <CardContent class="p-4 flex flex-col gap-3 items-center">
-                <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif">{{ country.name }}</CardTitle>
-                <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ country.description }}</CardDescription>
-                <div class="w-full flex justify-center">
-                  <template v-if="key === 'kenya'">
-                    <Button size="sm" class="mt-2 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition">Explore Kenya</Button>
-                  </template>
-                  <template v-else>
-                    <span class="inline-block mt-2 px-4 py-2 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">Coming Soon</span>
-                  </template>
-                </div>
-              </CardContent>
-            </NuxtLink>
+            <CardHeader class="p-0">
+              <NuxtImg :src="country.image" :alt="country.name" class="w-full h-40 object-cover rounded-t-md" />
+            </CardHeader>
+            <CardContent class="p-4 flex flex-col gap-3 items-center">
+              <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif">{{ country.name }}</CardTitle>
+              <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ country.description }}</CardDescription>
+              <div class="w-full flex justify-center">
+                <NuxtLink v-if="key === 'kenya'" :to="`/destinations/${key}`" class="w-full flex justify-center">
+                  <Button size="sm" class="mt-2 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition cursor-pointer">Explore Kenya</Button>
+                </NuxtLink>
+                <span v-else class="inline-block mt-2 px-4 py-2 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">Coming Soon</span>
+              </div>
+            </CardContent>
           </Card>
         </div>
       </div>
