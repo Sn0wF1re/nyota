@@ -31,9 +31,11 @@
             Embark on a journey through Kenya's iconic landscapes with curated safari experiences crafted for the discerning traveler. From the majestic Maasai Mara to the breathtaking Great Rift Valley, every detail is designed to captivate your soul.
           </p>
           <div>
-            <Button variant="outline" class="border-primary text-primary hover:bg-primary hover:text-foreground rounded-full cursor-pointer">
-              Book Now
-            </Button>
+            <NuxtLink to="/destinations" class="inline-block">
+              <Button variant="outline" class="border-primary text-primary hover:bg-primary hover:text-foreground rounded-full cursor-pointer">
+                Book Now
+              </Button>
+            </NuxtLink>
           </div>
         </div>
         <!-- <div class="relative">
