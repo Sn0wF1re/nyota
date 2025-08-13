@@ -114,13 +114,13 @@
 
     <!-- Floating Contact -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
-      <a href="mailto:info@nyotasafari.com" target="_blank" rel="noopener noreferrer" class="w-full">
+      <a href="mailto:info@nyotasafari.com" target="_blank" rel="noopener noreferrer" class="w-full cursor-pointer">
         <Button size="sm" class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center">
           <LucideMail class="w-4 h-4 mr-2" />
           Email
         </Button>
       </a>
-      <NuxtLink to="/contact" class="w-full">
+      <NuxtLink to="/contact" class="w-full cursor-pointer">
         <Button size="sm" class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center">
           <LucidePhone class="w-4 h-4 mr-2" />
           Contact
