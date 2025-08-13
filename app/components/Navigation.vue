@@ -10,25 +10,25 @@
         </div>
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <NuxtLink v-for="item in navItems" :key="item.url" :to="item.url" class="text-sm transition-colors" :class="$route.path === item.url ? 'text-[#c5aa5e]' : 'text-[#f7f6f3] hover:text-[#c5aa5e]'">
+          <NuxtLink v-for="item in navItems" :key="item.url" :to="item.url" class="text-sm transition-colors" :class="$route.path === item.url ? 'text-primary' : 'text-background hover:text-primary'">
             {{ item.name }}
           </NuxtLink>
         </div>
         <!-- Book Now Button -->
         <div class="hidden md:block">
-          <Button variant="outline" class="border-[#c5aa5e] text-[#c5aa5e] hover:bg-[#c5aa5e] hover:text-[#121820] rounded-full">
+          <Button variant="outline" class="border-primary text-primary hover:bg-primary hover:text-foreground rounded-full cursor-pointer">
             Book Now
           </Button>
         </div>
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-[#f7f6f3]" @click="isMenuOpen = !isMenuOpen">
+        <button class="md:hidden text-background" @click="isMenuOpen = !isMenuOpen">
           <component :is="isMenuOpen ? X : Menu" class="w-6 h-6" />
         </button>
       </div>
       <!-- Mobile Menu -->
-      <div v-if="isMenuOpen" class="md:hidden bg-[#121820] border-t border-[#c5aa5e]/20">
+      <div v-if="isMenuOpen" class="md:hidden bg-foreground border-t border-primary/20">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <NuxtLink v-for="item in navItems" :key="item.url" :to="item.url" class="block text-[#f7f6f3] py-2 px-4 rounded hover:bg-[#c5aa5e]/10" @click="isMenuOpen = false">
+          <NuxtLink v-for="item in navItems" :key="item.url" :to="item.url" class="block text-background py-2 px-4 rounded hover:bg-primary/10" @click="isMenuOpen = false">
             {{ item.name }}
           </NuxtLink>
         </div>

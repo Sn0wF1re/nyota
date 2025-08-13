@@ -31,7 +31,7 @@
             Embark on a journey through Kenya's iconic landscapes with curated safari experiences crafted for the discerning traveler. From the majestic Maasai Mara to the breathtaking Great Rift Valley, every detail is designed to captivate your soul.
           </p>
           <div>
-            <Button variant="outline" class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-foreground rounded-full px-8 py-6 text-lg font-medium transition-all duration-300">
+            <Button variant="outline" class="border-primary text-primary hover:bg-primary hover:text-foreground rounded-full cursor-pointer">
               Book Now
             </Button>
           </div>
@@ -115,13 +115,19 @@
     <!-- Floating Contact -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
       <a href="mailto:info@nyotasafari.com" target="_blank" rel="noopener noreferrer" class="w-full">
-        <Button size="sm" class="cursor-pointer w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center">
+        <Button
+          size="sm"
+          class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center cursor-pointer"
+        >
           <LucideMail class="w-4 h-4 mr-2" />
           Email
         </Button>
       </a>
       <NuxtLink to="/contact" class="w-full">
-        <Button size="sm" class="cursor-pointer w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center">
+        <Button
+          size="sm"
+          class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center cursor-pointer"
+        >
           <LucidePhone class="w-4 h-4 mr-2" />
           Contact
         </Button>
