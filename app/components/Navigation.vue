@@ -82,7 +82,7 @@ const setNavRef = (el: Element | { $el?: Element } | null, url: string) => {
 const navItems = [
   { name: 'Home', url: '/' },
   { name: 'The Star Chart', url: '/destinations' },
-  { name: 'The Collections', url: '/stories' },
+  { name: 'Field Journals', url: '/journal' },
   { name: 'The Vision', url: '/about' },
   { name: 'The Briefing', url: '/contact' }
 ]
