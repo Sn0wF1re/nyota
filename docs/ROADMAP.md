@@ -3,42 +3,42 @@
 ## Phase 1 — Foundation
 
 * [ ] Clean folder structure
-* [ ] Setup composables (stories, journals)
-* [ ] Create base layout components
+* [ ] Setup composables (stories, journals) (partial: stories/universe complete, journals still route-driven)
+* [x] Create base layout components
 
 ## Phase 2 — Stories
 
-* [ ] Build StoryHero
-* [ ] Build StoryLens
-* [ ] Build StoryChapter
-* [ ] Build StoryPair
-* [ ] Dynamic story page
+* [ ] Build StoryHero (functional in route, not componentized)
+* [ ] Build StoryLens (functional in route, not componentized)
+* [ ] Build StoryChapter (functional in route, not componentized)
+* [ ] Build StoryPair (functional in route, not componentized)
+* [x] Dynamic story page
 
 ## Phase 3 — Universe
 
-* [ ] Build UniverseMap
-* [ ] Integrate useUniverse.ts
-* [ ] Add visited nodes logic
+* [x] Build UniverseMap
+* [x] Integrate useUniverse.ts
+* [x] Add visited nodes logic
 
 ## Phase 4 — Journals
 
-* [ ] Markdown parsing
-* [ ] Journal page layout
-* [ ] Related story linking
+* [x] Markdown parsing
+* [x] Journal page layout
+* [x] Related story linking
 
 ## Phase 5 — Homepage
 
-* [ ] Cinematic hero
-* [ ] Entry into universe
+* [x] Cinematic hero
+* [x] Entry into universe
 * [ ] Featured story/journal
 
 ## Phase 6 — Polish
 
 * [ ] Page transitions
-* [ ] Motion
+* [x] Motion
 * [ ] Typography refinement
 
 ## Phase 7 — Conversion
 
-* [ ] Discovery briefing redesign
-* [ ] Concierge-style UX
+* [x] Discovery briefing redesign
+* [x] Concierge-style UX
