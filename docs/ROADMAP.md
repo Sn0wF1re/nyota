@@ -8,10 +8,10 @@
 
 ## Phase 2 — Stories
 
-* [ ] Build StoryHero (functional in route, not componentized)
-* [ ] Build StoryLens (functional in route, not componentized)
-* [ ] Build StoryChapter (functional in route, not componentized)
-* [ ] Build StoryPair (functional in route, not componentized)
+* [x] Build StoryHero
+* [x] Build StoryLens
+* [x] Build StoryChapter
+* [x] Build StoryPair
 * [x] Dynamic story page
 
 ## Phase 3 — Universe
