@@ -2,7 +2,7 @@
 
 ## Phase 1 — Foundation
 
-* [ ] Clean folder structure
+* [x] Clean folder structure
 * [x] Setup composables (stories, journals)
 * [x] Create base layout components
 
