@@ -36,7 +36,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { countries } from '@/data/countries'
+import { countries } from '@/data/legacy/countries'
 
 const route = useRoute()
 const country = countries[route.params.id]

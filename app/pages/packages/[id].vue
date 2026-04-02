@@ -46,7 +46,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { packages } from '@/data/packages'
+import { packages } from '@/data/legacy/packages'
 
 const route = useRoute()
 const pkg = packages[route.params.id]

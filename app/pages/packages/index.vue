@@ -55,5 +55,5 @@
 </template>
 
 <script setup>
-import { packages } from '@/data/packages'
+import { packages } from '@/data/legacy/packages'
 </script>
