@@ -106,7 +106,7 @@ const stitchedPreviewNode = computed(() => {
           <ul class="mt-4 space-y-2 text-sm text-[#f7f6f3]/90">
             <li><NuxtLink to="/about" class="hover:text-primary transition-colors">The Vision</NuxtLink></li>
             <li><NuxtLink to="/contact" class="hover:text-primary transition-colors">The Briefing</NuxtLink></li>
-            <li><NuxtLink to="/privacy" class="hover:text-primary transition-colors">Privacy</NuxtLink></li>
+            <li><NuxtLink to="/journal" class="hover:text-primary transition-colors">Field Journals</NuxtLink></li>
           </ul>
         </div>
       </div>
