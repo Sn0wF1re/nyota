@@ -41,7 +41,7 @@ const selectedPathD = computed(() => {
 </script>
 
 <template>
-  <main class="relative min-h-screen bg-[#0d0e10] pt-16 text-[#e8e4d8] overflow-hidden">
+  <main class="relative min-h-screen overflow-hidden bg-midnight pt-16 text-bone">
     <div class="pointer-events-none absolute inset-0 opacity-60">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(166,139,76,0.22),transparent_35%),radial-gradient(circle_at_78%_72%,rgba(232,228,216,0.08),transparent_32%)]" />
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.35)_100%)]" />
@@ -49,16 +49,16 @@ const selectedPathD = computed(() => {
 
     <section class="relative z-10 mx-auto max-w-7xl px-6 py-16">
       <div class="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
-        <div class="rounded-lg border border-[#a68b4c]/25 bg-black/25 p-6 md:p-8">
+        <div class="rounded-lg border border-primary/25 bg-black/25 p-6 md:p-8">
           <h1 class="font-serif text-4xl font-light tracking-[0.08em] md:text-6xl">
             Briefing: Select the Horizons That Called to You.
           </h1>
-          <p class="mt-5 max-w-2xl text-sm uppercase tracking-monograph text-[#a68b4c]">
+          <p class="mt-5 max-w-2xl text-sm uppercase tracking-monograph text-primary">
             Defining your path in the Nyota Universe starts with the places that already echo in your memory.
           </p>
 
           <div class="mt-10">
-            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-[#e8e4d8]">Active Journeys</h2>
+            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-bone">Active Journeys</h2>
             <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <button
                 v-for="node in activeNodes"
@@ -71,13 +71,13 @@ const selectedPathD = computed(() => {
                 @click="toggleActive(node.slug)"
               >
                 <span class="block font-serif text-xl italic">{{ node.name }}</span>
-                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-[#a68b4c]">{{ node.sub }}</span>
+                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-primary">{{ node.sub }}</span>
               </button>
             </div>
           </div>
 
           <div class="mt-10">
-            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-[#e8e4d8]">Horizon Interest</h2>
+            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-bone">Horizon Interest</h2>
             <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <button
                 v-for="node in horizonNodes"
@@ -90,51 +90,51 @@ const selectedPathD = computed(() => {
                 @click="toggleHorizon(node.slug)"
               >
                 <span class="block font-serif text-xl italic">{{ node.name }}</span>
-                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-[#a68b4c]">Horizon Expedition</span>
+                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-primary">Horizon Expedition</span>
               </button>
             </div>
           </div>
 
           <form class="mt-12 space-y-8">
             <div>
-              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">First Name</label>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-bone">First Name</label>
               <input
                 v-model="form.firstName"
                 type="text"
                 placeholder="Your first name"
-                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-bone placeholder:text-bone/40 focus:border-primary focus:outline-none"
               >
             </div>
 
             <div>
-              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">Email</label>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-bone">Email</label>
               <input
                 v-model="form.email"
                 type="email"
                 placeholder="your.email@example.com"
-                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-bone placeholder:text-bone/40 focus:border-primary focus:outline-none"
               >
             </div>
 
             <div>
-              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">Message</label>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-bone">Message</label>
               <textarea
                 v-model="form.message"
                 placeholder="Tell us the mood, pace, and wild chapter you want to live next..."
                 rows="4"
-                class="mt-2 w-full resize-y border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+                class="mt-2 w-full resize-y border-b border-primary/30 bg-transparent px-0 py-2 text-bone placeholder:text-bone/40 focus:border-primary focus:outline-none"
               />
             </div>
 
-            <Button type="submit" class="border border-[#a68b4c] bg-[#a68b4c]/10 text-[#e8e4d8] hover:bg-[#a68b4c] hover:text-[#0d0e10] rounded-none px-8 py-3 text-[10px] uppercase tracking-celestial">
+            <Button type="submit" class="rounded-none border border-primary bg-primary/10 px-8 py-3 text-[10px] uppercase tracking-celestial text-bone hover:bg-primary hover:text-midnight">
               Submit Briefing to the Concierge.
             </Button>
           </form>
         </div>
 
-        <aside class="rounded-lg border border-[#a68b4c]/35 bg-black/45 p-5 backdrop-blur-sm">
-          <p class="text-[10px] uppercase tracking-celestial text-[#a68b4c]">Celestial Path Summary</p>
-          <div class="mt-4 relative h-[640px] rounded-md border border-primary/20 bg-[#0a0b0d]/80 overflow-hidden">
+        <aside class="rounded-lg border border-primary/35 bg-black/45 p-5 backdrop-blur-sm">
+          <p class="text-[10px] uppercase tracking-celestial text-primary">Celestial Path Summary</p>
+          <div class="relative mt-4 h-[640px] overflow-hidden rounded-md border border-primary/20 bg-midnight/80">
             <svg viewBox="0 0 1000 1000" class="h-full w-full p-8">
               <defs>
                 <filter id="briefingStarGlow" x="-50%" y="-50%" width="200%" height="200%">
@@ -150,7 +150,7 @@ const selectedPathD = computed(() => {
                 v-if="selectedPathD"
                 :d="selectedPathD"
                 fill="none"
-                stroke="#c5aa5e"
+                stroke="var(--primary)"
                 stroke-width="1.5"
                 stroke-dasharray="6 5"
                 class="opacity-65"
@@ -162,18 +162,18 @@ const selectedPathD = computed(() => {
                   :cx="node.x"
                   :cy="node.y"
                   :r="selectedActive.includes(node.slug) ? 7 : 3"
-                  :fill="selectedActive.includes(node.slug) ? '#c5aa5e' : 'rgba(197,170,94,0.35)'"
+                  :fill="selectedActive.includes(node.slug) ? 'var(--primary)' : 'rgba(197,170,94,0.35)'"
                   filter="url(#briefingStarGlow)"
-                  :style="selectedActive.includes(node.slug) ? 'filter: drop-shadow(0 0 10px #c5aa5e);' : ''"
+                  :style="selectedActive.includes(node.slug) ? 'filter: drop-shadow(0 0 10px var(--primary));' : ''"
                 />
               </g>
             </svg>
 
             <div class="absolute bottom-4 left-4 right-4 border border-primary/25 bg-black/45 px-4 py-3">
-              <p class="text-[10px] uppercase tracking-celestial text-[#a68b4c]">
+              <p class="text-[10px] uppercase tracking-celestial text-primary">
                 {{ selectedActive.length }} Active Destinations Marked
               </p>
-              <p class="mt-1 text-xs text-[#e8e4d8]/72">
+              <p class="mt-1 text-xs text-bone/72">
                 Stars illuminate and routes connect as your path takes shape.
               </p>
             </div>
