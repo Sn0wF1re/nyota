@@ -49,7 +49,7 @@ const stitchedPreviewNode = computed(() => {
 </script>
 
 <template>
-  <footer class="relative overflow-hidden border-t border-primary/20 bg-[#0a0b0d] text-[#f7f6f3]">
+  <footer class="relative overflow-hidden border-t border-primary/20 bg-midnight text-bone">
     <div class="horizon-grain absolute inset-0 pointer-events-none" />
     <div class="absolute inset-0 pointer-events-none horizon-fade" />
 
@@ -59,7 +59,7 @@ const stitchedPreviewNode = computed(() => {
     >
       <p class="text-[10px] uppercase tracking-celestial text-primary">Celestial Preview</p>
       <h3 class="mt-4 font-serif text-4xl italic">The horizon is opening toward {{ stitchedPreviewNode.name }}.</h3>
-      <p class="mt-4 max-w-2xl text-sm uppercase tracking-monograph text-[#f7f6f3]/70">
+      <p class="mt-4 max-w-2xl text-sm uppercase tracking-monograph text-bone/70">
         You have reached the edge of this chapter. Continue into the next constellation and keep the narrative in motion.
       </p>
       <NuxtLink
@@ -76,15 +76,15 @@ const stitchedPreviewNode = computed(() => {
           <p class="text-[10px] uppercase tracking-celestial text-primary">Next Journey</p>
           <div class="mt-5 flex items-center gap-4">
             <span class="pulse-star h-5 w-5 rounded-full bg-primary" />
-            <p class="font-serif text-2xl italic text-[#f7f6f3]">
+            <p class="font-serif text-2xl italic text-bone">
               The horizon is calling: Have you witnessed {{ randomStar?.name || 'this constellation' }}?
             </p>
           </div>
         </div>
 
         <div>
-          <h4 class="text-[10px] uppercase tracking-celestial text-[#f7f6f3]/75">The Registry</h4>
-          <ul class="mt-4 space-y-2 text-sm text-[#f7f6f3]/90">
+          <h4 class="text-[10px] uppercase tracking-celestial text-bone/75">The Registry</h4>
+          <ul class="mt-4 space-y-2 text-sm text-bone/90">
             <li v-for="node in registryNodes" :key="node.slug">
               <NuxtLink :to="`/stories/${node.slug}`" class="hover:text-primary transition-colors">{{ node.name }}</NuxtLink>
             </li>
@@ -92,8 +92,8 @@ const stitchedPreviewNode = computed(() => {
         </div>
 
         <div>
-          <h4 class="text-[10px] uppercase tracking-celestial text-[#f7f6f3]/75">The Horizon</h4>
-          <ul class="mt-4 space-y-2 text-sm text-[#f7f6f3]/78">
+          <h4 class="text-[10px] uppercase tracking-celestial text-bone/75">The Horizon</h4>
+          <ul class="mt-4 space-y-2 text-sm text-bone/78">
             <li v-for="node in horizonNodes" :key="node.slug" class="flex items-center gap-2">
               <NuxtLink :to="`/stories/${node.slug}`" class="hover:text-primary transition-colors">{{ node.name }}</NuxtLink>
               <span class="text-[10px] uppercase tracking-celestial text-primary/75">Coming Soon</span>
@@ -102,8 +102,8 @@ const stitchedPreviewNode = computed(() => {
         </div>
 
         <div>
-          <h4 class="text-[10px] uppercase tracking-celestial text-[#f7f6f3]/75">The Studio</h4>
-          <ul class="mt-4 space-y-2 text-sm text-[#f7f6f3]/90">
+          <h4 class="text-[10px] uppercase tracking-celestial text-bone/75">The Studio</h4>
+          <ul class="mt-4 space-y-2 text-sm text-bone/90">
             <li><NuxtLink to="/about" class="hover:text-primary transition-colors">The Vision</NuxtLink></li>
             <li><NuxtLink to="/contact" class="hover:text-primary transition-colors">The Briefing</NuxtLink></li>
             <li><NuxtLink to="/journal" class="hover:text-primary transition-colors">Field Journals</NuxtLink></li>

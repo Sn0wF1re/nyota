@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0b0d]/10 backdrop-blur-md border-b border-primary/20">
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 bg-midnight/10 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -28,7 +28,7 @@
         <!-- Story CTA -->
         <div class="hidden md:block">
           <NuxtLink to="/contact">
-            <Button variant="outline" class="border-[#f7f6f3]/60 text-foreground hover:text-primary rounded-none cursor-pointer">
+            <Button variant="outline" class="cursor-pointer rounded-none border-bone/60 text-foreground hover:text-primary">
               Craft Your Path
             </Button>
           </NuxtLink>
@@ -39,7 +39,7 @@
         </button>
       </div>
       <!-- Mobile Menu -->
-      <div v-if="isMenuOpen" class="md:hidden bg-[#0a0b0d]/85 border-t border-primary/20 backdrop-blur-md">
+      <div v-if="isMenuOpen" class="border-t border-primary/20 bg-midnight/85 backdrop-blur-md md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <NuxtLink
             v-for="item in navItems"
@@ -51,7 +51,7 @@
             {{ item.name }}
           </NuxtLink>
           <NuxtLink to="/contact" class="inline-block mt-2 ml-4" @click="isMenuOpen = false">
-            <Button variant="outline" class="border-[#f7f6f3]/60 text-foreground hover:text-primary rounded-none cursor-pointer">
+            <Button variant="outline" class="cursor-pointer rounded-none border-bone/60 text-foreground hover:text-primary">
               Craft Your Path
             </Button>
           </NuxtLink>
