@@ -5,6 +5,12 @@ import { fileURLToPath } from 'node:url';
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    pageTransition: {
+      name: 'nyota-page',
+      mode: 'out-in'
+    }
+  },
   modules: [
     '@nuxt/image',
     '@vueuse/nuxt',
