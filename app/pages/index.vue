@@ -7,6 +7,31 @@ const { nodes, navigateToNode } = useUniverse()
 const activeNodes = computed(() => nodes.filter(node => !node.isHorizon))
 const featuredSlug = ref(activeNodes.value[0]?.slug ?? '')
 
+const { data: featuredStory } = await useAsyncData('home-featured-story', async () => {
+  if (!featuredSlug.value) return null
+  return await queryCollection('stories').where('slug', '=', featuredSlug.value).first()
+}, { watch: [featuredSlug] })
+
+const { data: featuredJournal } = await useAsyncData('home-featured-journal', async () => {
+  const journals = await queryCollection('journal').all()
+  return journals[0] || null
+})
+
+type JournalRecord = {
+  title?: string
+  path?: string
+  slug?: string
+  category?: string
+}
+
+const featuredJournalData = computed(() => (featuredJournal.value || {}) as JournalRecord)
+const featuredJournalPath = computed(() => {
+  const journal = featuredJournalData.value
+  if (typeof journal.path === 'string') return journal.path
+  if (typeof journal.slug === 'string') return `/journal/${journal.slug}`
+  return '/journal'
+})
+
 const heroRef = ref<HTMLElement | null>(null)
 const mapRef = ref<HTMLElement | null>(null)
 
@@ -107,6 +132,36 @@ onMounted(async () => {
               </button>
             </li>
           </ul>
+
+          <div class="mt-8 border-t border-primary/20 pt-6">
+            <p class="text-[10px] uppercase tracking-celestial text-primary">Featured Story</p>
+            <h3 class="mt-3 font-serif text-2xl italic text-foreground">
+              {{ featuredStory?.hero?.headline || featuredStory?.slug || 'Editorial Selection' }}
+            </h3>
+            <NuxtLink
+              v-if="featuredStory"
+              :to="`/stories/${featuredStory.slug}`"
+              class="mt-5 inline-block border border-primary px-5 py-2 text-[10px] uppercase tracking-celestial text-primary transition hover:bg-primary hover:text-background"
+            >
+              Enter Story
+            </NuxtLink>
+          </div>
+
+          <div class="mt-8 border-t border-primary/20 pt-6">
+            <p class="text-[10px] uppercase tracking-celestial text-primary">Featured Journal</p>
+            <h3 class="mt-3 font-serif text-2xl italic text-foreground">
+              {{ featuredJournalData.title || 'Field Journal' }}
+            </h3>
+            <p class="mt-2 text-[10px] uppercase tracking-monograph text-foreground/70">
+              {{ featuredJournalData.category || 'Editorial Authority' }}
+            </p>
+            <NuxtLink
+              :to="featuredJournalPath"
+              class="mt-5 inline-block border border-primary px-5 py-2 text-[10px] uppercase tracking-celestial text-primary transition hover:bg-primary hover:text-background"
+            >
+              Read Journal
+            </NuxtLink>
+          </div>
         </aside>
       </section>
     </section>
