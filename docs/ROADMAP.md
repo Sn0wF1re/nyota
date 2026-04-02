@@ -34,9 +34,9 @@
 
 ## Phase 6 — Polish
 
-* [ ] Page transitions
+* [x] Page transitions
 * [x] Motion
-* [ ] Typography refinement
+* [x] Typography refinement
 
 ## Phase 7 — Conversion
 
