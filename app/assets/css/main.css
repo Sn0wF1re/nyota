@@ -175,7 +175,29 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+
+  p,
+  li,
+  label,
+  input,
+  textarea,
+  button {
+    font-family: var(--font-sans);
   }
 }
 
@@ -244,4 +266,19 @@
   .guestbook-signature {
     letter-spacing: 0.34em;
   }
+}
+
+.nyota-page-enter-active,
+.nyota-page-leave-active {
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nyota-page-enter-from {
+  opacity: 0;
+  transform: translateY(20px) scale(0.995);
+}
+
+.nyota-page-leave-to {
+  opacity: 0;
+  transform: translateY(-16px) scale(1.002);
 }
