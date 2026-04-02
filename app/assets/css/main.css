@@ -4,6 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --triad-midnight: #0a0b0d;
+  --triad-gold: #c5aa5e;
+  --triad-bone: #f2f0eb;
+  --triad-midnight-soft: #14161b;
+  --triad-gold-soft: #d3bf83;
+  --triad-bone-soft: #f7f4ec;
   --background: #f7f6f3;
   --foreground: #121820;
   --card: #f7f6f3;
@@ -50,23 +56,25 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --tracking-monograph: 0.2em;
+  --tracking-celestial: 0.4em;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #171717;
-  --card-foreground: #fafafa;
-  --popover: #262626;
-  --popover-foreground: #fafafa;
-  --primary: #e5e5e5;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
+  --background: var(--triad-midnight);
+  --foreground: var(--triad-bone);
+  --card: var(--triad-midnight-soft);
+  --card-foreground: var(--triad-bone);
+  --popover: #1a1c22;
+  --popover-foreground: var(--triad-bone);
+  --primary: var(--triad-gold);
+  --primary-foreground: var(--triad-midnight);
+  --secondary: #1a1c22;
+  --secondary-foreground: var(--triad-bone);
+  --muted: #1b1f28;
   --muted-foreground: #a1a1a1;
-  --accent: #404040;
-  --accent-foreground: #fafafa;
+  --accent: #232730;
+  --accent-foreground: var(--triad-bone);
   --destructive: #ff6467;
   --destructive-foreground: #fafafa;
   --border: #282828;
@@ -96,7 +104,9 @@
   --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
   --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
   --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25); 
+  --background: var(--triad-midnight);
+  --foreground: var(--triad-bone);
 }
 
 @theme inline {
@@ -119,6 +129,12 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-midnight: var(--triad-midnight);
+  --color-gold: var(--triad-gold);
+  --color-bone: var(--triad-bone);
+  --color-midnight-soft: var(--triad-midnight-soft);
+  --color-gold-soft: var(--triad-gold-soft);
+  --color-bone-soft: var(--triad-bone-soft);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -150,6 +166,8 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+  --letter-spacing-monograph: var(--tracking-monograph);
+  --letter-spacing-celestial: var(--tracking-celestial);
 }
 
 @layer base {
@@ -158,5 +176,72 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .dusty-wild-layout {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .dusty-wild-layout::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.12;
+    background-image:
+      radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 4px),
+      radial-gradient(circle at 72% 68%, rgba(197, 170, 94, 0.18) 0 1px, transparent 1px 5px),
+      repeating-radial-gradient(circle at 48% 54%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 3px);
+    mix-blend-mode: soft-light;
+  }
+
+  .gold-mist-bg {
+    background:
+      radial-gradient(circle at 48% 34%, rgba(197, 170, 94, 0.2) 0%, rgba(33, 29, 20, 0.58) 32%, rgba(10, 11, 13, 0.94) 68%, #0a0b0d 100%);
+  }
+
+  .chapter-transition-band {
+    background:
+      linear-gradient(90deg, rgba(10, 11, 13, 0.92) 0%, rgba(197, 170, 94, 0.18) 49%, rgba(10, 11, 13, 0.92) 100%);
+  }
+
+  .editorial-atmosphere {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .editorial-atmosphere::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.6;
+    background-image:
+      radial-gradient(circle at 24% 24%, rgba(197, 170, 94, 0.1) 0%, transparent 42%),
+      radial-gradient(circle at 78% 76%, rgba(247, 246, 243, 0.05) 0%, transparent 34%),
+      repeating-radial-gradient(circle at 44% 58%, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px);
+    z-index: 0;
+  }
+
+  .editorial-atmosphere::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    background: radial-gradient(circle at center, transparent 52%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 0;
+  }
+
+  .quote-letter {
+    text-wrap: pretty;
+  }
+
+  .guestbook-signature {
+    letter-spacing: 0.34em;
   }
 }

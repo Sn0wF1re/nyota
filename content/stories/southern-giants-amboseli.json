@@ -1,0 +1,43 @@
+{
+  "slug": "southern-giants-amboseli",
+  "collection": "Southern Giants",
+  "isHorizon": false,
+  "mapCoords": { "x": 620, "y": 880 },
+  "hero": {
+    "headline": "In the Shadow of the Peak",
+    "subHeadline": "Where the world’s largest tuskers walk against the backdrop of Kilimanjaro.",
+    "videoSrc": "/videos/hero/amboseli-kili.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Scale is the protagonist here. We utilize private concessions in the Chyulu Hills to avoid the crowds and offer a private audience with the giants.",
+    "uspIcons": [
+      { "label": "Kilimanjaro Vistas", "iconName": "mountain-snow" },
+      { "label": "Big Tusker Tracking", "iconName": "elephant" },
+      { "label": "Lava Tube Hikes", "iconName": "footprints" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Elephant’s Path",
+      "narrativeBody": "Witnessing grand matriarchs cross the dry lake beds under the snow-capped crown of Kili. A silhouette of timeless power.",
+      "mediaUrl": "/images/stories/amboseli-giants.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Green Hills",
+      "narrativeBody": "Hiking through ancient volcanic lava tubes in Hemingway’s 'Green Hills of Africa.' A lush contrast to the plains below.",
+      "mediaUrl": "/videos/stories/chyulu-hike.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Star Bed Legacy",
+      "narrativeBody": "Sleeping suspended between the forest and the stars, moonlight hitting the mountain ice. Total cosmic isolation.",
+      "mediaUrl": "/images/stories/starbed-kili.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "azure-ancient-lamu",
+    "reasoning": "The 'Finishing Move'—from the snows of the mountain to the warm breeze of the Swahili coast."
+  }
+}

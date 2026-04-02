@@ -10,51 +10,58 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
-    'shadcn-nuxt',
     '@nuxt/fonts',
     '@nuxtjs/i18n',
     '@vueuse/motion/nuxt',
-    '@nuxt/test-utils'
+    '@nuxt/test-utils',
+    '@nuxt/content',
+    'shadcn-nuxt'
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', name: 'English' }
+    ]
+  },
   css: ['@/assets/css/main.css'],
   vite: {
     plugins: [
       tailwindcss(),
-    ]
+    ],
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
+    }
   },
   shadcn: {
     prefix: '',
+    componentDir: '@/components/ui'
   },
-  alias: {
-    '@components': fileURLToPath(new URL('./app/components', import.meta.url)),
+  motion: {
+    directives: {
+      // Fade In
+      'fade-in': {
+        initial: { opacity: 0, y: 30 },
+        enter: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+      },
+      // Staggered Fade (for lists)
+      'stagger-fade': {
+        initial: { opacity: 0, y: 30 },
+        enter: { opacity: 1, y: 0, transition: { duration: 0.8 } } // Use delay in template for stagger
+      },
+      // Drag X (carousel/slider)
+      'drag-x': {
+        initial: { x: 0 },
+        enter: {
+          transition: { type: 'spring', damping: 18, stiffness: 90, duration: 0.2 }
+        }
+      }
+    }
   },
   runtimeConfig: {
     public: {
-      motion: {
-        directives: {
-          // Fade In
-          'fade-in': {
-            initial: { opacity: 0, y: 30 },
-            enter: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }
-          },
-          // Slide Left
-          'slide-left': {
-            initial: { opacity: 0, x: -50 },
-            enter: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.2 } }
-          },
-          // Staggered Fade (for lists)
-          'stagger-fade': {
-            initial: { opacity: 0, y: 30 },
-            enter: { opacity: 1, y: 0, transition: { duration: 0.8 } } // Use delay in template for stagger
-          },
-          // Drag X (carousel/slider)
-          'drag-x': {
-            initial: { x: 0 },
-            drag: 'x',
-            transition: { type: 'spring', damping: 18, stiffness: 90, duration: 0.2 }
-          }
-        }
-      }
     }
   }
 })

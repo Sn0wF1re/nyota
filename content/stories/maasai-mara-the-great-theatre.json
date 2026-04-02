@@ -1,0 +1,43 @@
+{
+  "slug": "maasai-mara-the-great-theatre",
+  "collection": "Great Migration",
+  "isHorizon": false,
+  "mapCoords": { "x": 420, "y": 780 },
+  "hero": {
+    "headline": "The Great Theatre",
+    "subHeadline": "Where the world’s most dramatic migration meets the absolute silence of the private perimeter.",
+    "videoSrc": "/videos/hero/mara-migration-slow.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "We bypass the National Reserve for the private concessions of Olare Orok. Here, luxury is defined by the 1:700 ratio—one tent per 700 acres of pristine wild. It is a lesson in spatial exclusivity.",
+    "uspIcons": [
+      { "label": "Private Conservancy Access", "iconName": "shield-check" },
+      { "label": "Night Flight Optics", "iconName": "eye" },
+      { "label": "Off-Road Tracking", "iconName": "map" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Morning Hunt",
+      "narrativeBody": "Tracking the resident pride as the mist lifts off the Talek River. A study in patience and primal tension, where the only sound is the grass beneath the tires.",
+      "mediaUrl": "/images/stories/mara-hunt.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Sundowner Ridge",
+      "narrativeBody": "A private bar set up on the Oloololo Escarpment as the sky turns ochre. The horizon is your only boundary, and the world feels infinitely vast.",
+      "mediaUrl": "/videos/stories/mara-sunset.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Silent Night",
+      "narrativeBody": "Utilizing infrared optics to witness the leopard’s night-shift. Safari in the dark is a sensory recalibration—a secret world revealed.",
+      "mediaUrl": "/images/stories/mara-leopard.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "the-hidden-north-samburu",
+    "reasoning": "The gold plains of the south to the red desert of the north. A study in geological contrast."
+  }
+}

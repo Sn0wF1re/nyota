@@ -1,0 +1,43 @@
+{
+  "slug": "serengeti-the-endless-plains",
+  "isHorizon": true,
+  "collection": "Horizon Series",
+  "mapCoords": { "x": 380, "y": 920 },
+  "hero": {
+    "headline": "Tanzania: The Endless Plains",
+    "subHeadline": "The Great Migration doesn't stop at the border. Mapping the private Grumeti for 2026.",
+    "videoSrc": "/videos/horizon/serengeti-migration.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Our expansion into Tanzania focuses on the 'Grumeti Protocol'—350,000 acres of private wilderness where the migration is yours alone. No crowds, just the raw pulse of the Serengeti.",
+    "uspIcons": [
+      { "label": "Grumeti Private Access", "iconName": "lock" },
+      { "label": "Ndutu Calving Expeditions", "iconName": "baby" },
+      { "label": "Mobile Migration Camps", "iconName": "tent" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Grumeti Sweep",
+      "narrativeBody": "Witnessing the Western Corridor crossings away from the transit vehicles. A private audience with the greatest show on earth.",
+      "mediaUrl": "/images/horizon/serengeti-grumeti.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Short Grass Plains",
+      "narrativeBody": "The Ndutu calving season—where half a million wildebeest are born in a single month. A study in the fragility and force of life.",
+      "mediaUrl": "/videos/horizon/serengeti-calving.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Crater Rim",
+      "narrativeBody": "Waking on the edge of Ngorongoro. A garden of Eden enclosed in a volcanic caldera, curated for the modern explorer.",
+      "mediaUrl": "/images/horizon/ngorongoro-rim.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "maasai-mara-the-great-theatre",
+    "reasoning": "The logical cross-border extension. The Mara and Serengeti are two halves of the same heartbeat."
+  }
+}

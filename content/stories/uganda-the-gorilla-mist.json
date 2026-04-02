@@ -1,0 +1,43 @@
+{
+  "slug": "uganda-the-gorilla-mist",
+  "isHorizon": true,
+  "collection": "Horizon Series",
+  "mapCoords": { "x": 100, "y": 700 },
+  "hero": {
+    "headline": "Uganda: The Emerald Sanctuary",
+    "subHeadline": "Venture into the Bwindi Impenetrable Forest for a four-hour 'Habituation' encounter.",
+    "videoSrc": "/videos/horizon/bwindi-gorilla.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Uganda is our primate specialty. We are designing 'Habituation Circuits' in Rushaga, allowing you four hours—instead of one—with the mountain gorillas.",
+    "uspIcons": [
+      { "label": "4-Hour Habituation", "iconName": "clock" },
+      { "label": "Cloud Forest Lodges", "iconName": "cloud" },
+      { "label": "Chimpanzee Trekking", "iconName": "paw" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Primate Protocol",
+      "narrativeBody": "It starts with the mist rising over the Virungas. We trek deep into the ancient canopy to find the keepers of the forest.",
+      "mediaUrl": "/images/horizon/bwindi-mist.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Batwa Heritage",
+      "narrativeBody": "A walking encounter with the original forest people, sharing the botanical secrets of the Impenetrable Forest.",
+      "mediaUrl": "/videos/horizon/batwa-culture.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Crater Lakes",
+      "narrativeBody": "The volcanic lakes of western Uganda. A serene, water-based reprieve after the intensity of the trek.",
+      "mediaUrl": "/images/horizon/uganda-lakes.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "the-hidden-north-samburu",
+    "reasoning": "The transition from the arid North of Kenya to the lush rainforests of Uganda is a sensory masterclass."
+  }
+}

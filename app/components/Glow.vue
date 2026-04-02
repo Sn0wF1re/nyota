@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref } from 'vue'
 const props = defineProps<{ variant?: 'top' | 'above' | 'bottom' | 'below' | 'center'; class?: string }>()
 const variant = props.variant ?? 'top'
 const root = ref<HTMLElement | null>(null)

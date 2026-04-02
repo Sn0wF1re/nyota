@@ -1,0 +1,43 @@
+{
+  "slug": "azure-ancient-lamu",
+  "collection": "Coastal Escape",
+  "isHorizon": false,
+  "mapCoords": { "x": 880, "y": 720 },
+  "hero": {
+    "headline": "Azure & Ancient",
+    "subHeadline": "A 1,000-year dive into Swahili civilization where the monsoon winds dictate the pace of life.",
+    "videoSrc": "/videos/hero/lamu-dhow.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "We avoid the resorts. Our Coast is defined by the carved teak doors of Lamu Old Town and private dhow charters navigating by the stars.",
+    "uspIcons": [
+      { "label": "Private Dhow Charters", "iconName": "ship" },
+      { "label": "Heritage Architecture", "iconName": "landmark" },
+      { "label": "Manda Island Seclusion", "iconName": "palmtree" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Slow Sail",
+      "narrativeBody": "Navigating the mangrove channels by traditional wooden dhow. No engines, only the snap of canvas and the rhythm of the tides.",
+      "mediaUrl": "/images/stories/lamu-sail.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Scent of Cloves",
+      "narrativeBody": "A walking tour of the stone alleys of Lamu, where time has stood still and donkeys remain the only logistics.",
+      "mediaUrl": "/videos/stories/lamu-town.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Turquoise Reset",
+      "narrativeBody": "Snorkeling in the protected coral gardens of Watamu. A total psychological immersion into the silence of the sea.",
+      "mediaUrl": "/images/stories/watamu-reef.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "southern-giants-amboseli",
+    "reasoning": "The classic 'Beach to Bush' reversal—from Swahili tides to the snows of Kilimanjaro."
+  }
+}

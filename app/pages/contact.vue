@@ -1,159 +1,185 @@
-<template>
-  <div class="min-h-screen bg-background text-foreground pt-16">
-    <!-- Hero Section -->
-    <section class="relative min-h-[40vh] flex items-center justify-center bg-foreground text-background overflow-hidden pb-16 pt-8">
-      <div class="absolute inset-0">
-        <Glow variant="center" class="opacity-30" />
-      </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
-        <h1 class="text-4xl md:text-6xl font-light mb-6 font-serif">
-          Plan Your Journey
-        </h1>
-        <p class="text-background/70 text-lg max-w-2xl mx-auto">
-          Ready to embark on your African adventure? Get in touch with our safari experts to start planning your unforgettable experience.
-        </p>
-      </div>
-    </section>
+<script setup lang="ts">
+import { computed, ref } from 'vue'
 
-    <!-- Contact Form & Info -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16">
-          <!-- Contact Form -->
-          <div>
-            <h2 class="text-3xl font-light text-foreground mb-8 font-serif">
-              Send us a Message
-            </h2>
-            <Form class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <FormField name="firstName" v-slot="{ field }">
-                  <FormItem>
-                    <FormLabel>First Name</FormLabel>
-                    <FormControl>
-                      <Input v-bind="field" placeholder="Your first name" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                </FormField>
-                <FormField name="lastName" v-slot="{ field }">
-                  <FormItem>
-                    <FormLabel>Last Name</FormLabel>
-                    <FormControl>
-                      <Input v-bind="field" placeholder="Your last name" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                </FormField>
-              </div>
-              <FormField name="email" v-slot="{ field }">
-                <FormItem>
-                  <FormLabel>Email Address</FormLabel>
-                  <FormControl>
-                    <Input v-bind="field" type="email" placeholder="your.email@example.com" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
-              <FormField name="phone" v-slot="{ field }">
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <Input v-bind="field" type="tel" placeholder="+1 (555) 123-4567" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
-              <FormField name="message" v-slot="{ field }">
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea v-bind="field" placeholder="Tell us about your dream safari experience..." class="min-h-[120px]" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
-              <Button type="submit" class="w-full mt-4 bg-primary text-background rounded-full py-4 text-lg">
-                Send Message
-              </Button>
-            </Form>
-          </div>
+const { nodes } = useUniverse()
 
-          <!-- Contact Info & Social -->
-          <div class="space-y-8">
-            <div>
-              <h2 class="text-3xl font-light text-foreground mb-8 font-serif">
-                Get in Touch
-              </h2>
-              <div class="space-y-6">
-                <div class="flex items-start space-x-4">
-                  <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail class="w-5 h-5 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 class="font-medium text-foreground mb-1">Email</h3>
-                    <p class="text-foreground/70">info@nyotasafari.com</p>
-                    <p class="text-foreground/70">bookings@nyotasafari.com</p>
-                  </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                  <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone class="w-5 h-5 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 class="font-medium text-foreground mb-1">Phone</h3>
-                    <p class="text-foreground/70">+254 (0) 700 123 456</p>
-                    <p class="text-foreground/70">+1 (555) 987-6543</p>
-                  </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                  <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin class="w-5 h-5 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 class="font-medium text-foreground mb-1">Office</h3>
-                    <p class="text-foreground/70">Nairobi, Kenya</p>
-                    <p class="text-foreground/70">East Africa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-medium text-foreground mb-4">Follow Us</h3>
-              <div class="flex space-x-4">
-                <Button variant="outline" size="sm" class="border-primary text-primary hover:bg-primary hover:text-background rounded-full">
-                  <Facebook class="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="sm" class="border-primary text-primary hover:bg-primary hover:text-background rounded-full">
-                  <Instagram class="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="sm" class="border-primary text-primary hover:bg-primary hover:text-background rounded-full">
-                  <Twitter class="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-            <div class="aspect-[4/3] bg-foreground/10 rounded-lg flex items-center justify-center">
-              <div class="text-center space-y-2">
-                <MapPin class="w-12 h-12 text-primary mx-auto" />
-                <p class="text-foreground/70">Interactive Map</p>
-                <p class="text-foreground/40 text-sm">Kenya & East Africa Focus</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</template>
+const activeNodes = computed(() => nodes.filter(node => !node.isHorizon))
+const horizonNodes = computed(() => nodes.filter(node => node.isHorizon))
 
-<script setup>
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-vue-next'
-import { ref } from 'vue'
+const selectedActive = ref<string[]>([])
+const selectedHorizon = ref<string[]>([])
 
 const form = ref({
   firstName: '',
-  lastName: '',
   email: '',
-  phone: '',
   message: ''
 })
+
+const toggleActive = (slug: string) => {
+  selectedActive.value = selectedActive.value.includes(slug)
+    ? selectedActive.value.filter(item => item !== slug)
+    : [...selectedActive.value, slug]
+}
+
+const toggleHorizon = (slug: string) => {
+  selectedHorizon.value = selectedHorizon.value.includes(slug)
+    ? selectedHorizon.value.filter(item => item !== slug)
+    : [...selectedHorizon.value, slug]
+}
+
+const selectedNodeCoords = computed(() =>
+  activeNodes.value
+    .filter(node => selectedActive.value.includes(node.slug))
+    .map(node => ({ x: node.x, y: node.y }))
+)
+
+const selectedPathD = computed(() => {
+  if (selectedNodeCoords.value.length < 2) return ''
+  const [first, ...rest] = selectedNodeCoords.value
+  return `M ${first.x} ${first.y} ${rest.map(point => `L ${point.x} ${point.y}`).join(' ')}`
+})
 </script>
+
+<template>
+  <main class="relative min-h-screen bg-[#0d0e10] pt-16 text-[#e8e4d8] overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 opacity-60">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(166,139,76,0.22),transparent_35%),radial-gradient(circle_at_78%_72%,rgba(232,228,216,0.08),transparent_32%)]" />
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.35)_100%)]" />
+    </div>
+
+    <section class="relative z-10 mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
+        <div class="rounded-lg border border-[#a68b4c]/25 bg-black/25 p-6 md:p-8">
+          <h1 class="font-serif text-4xl font-light tracking-[0.08em] md:text-6xl">
+            Briefing: Select the Horizons That Called to You.
+          </h1>
+          <p class="mt-5 max-w-2xl text-sm uppercase tracking-monograph text-[#a68b4c]">
+            Defining your path in the Nyota Universe starts with the places that already echo in your memory.
+          </p>
+
+          <div class="mt-10">
+            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-[#e8e4d8]">Active Journeys</h2>
+            <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button
+                v-for="node in activeNodes"
+                :key="node.slug"
+                type="button"
+                class="border px-4 py-4 text-left transition bg-black/15"
+                :class="selectedActive.includes(node.slug)
+                  ? 'border-primary bg-primary/12 shadow-[0_0_14px_rgba(197,170,94,0.45)]'
+                  : 'border-primary/30 hover:border-primary/60 hover:bg-primary/8'"
+                @click="toggleActive(node.slug)"
+              >
+                <span class="block font-serif text-xl italic">{{ node.name }}</span>
+                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-[#a68b4c]">{{ node.sub }}</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="font-serif text-2xl font-light tracking-[0.08em] text-[#e8e4d8]">Horizon Interest</h2>
+            <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button
+                v-for="node in horizonNodes"
+                :key="node.slug"
+                type="button"
+                class="border px-4 py-4 text-left transition bg-black/15"
+                :class="selectedHorizon.includes(node.slug)
+                  ? 'border-primary/80 bg-primary/12 shadow-[0_0_12px_rgba(197,170,94,0.35)]'
+                  : 'border-primary/25 opacity-85 hover:border-primary/45 hover:opacity-100'"
+                @click="toggleHorizon(node.slug)"
+              >
+                <span class="block font-serif text-xl italic">{{ node.name }}</span>
+                <span class="mt-1 block text-[10px] uppercase tracking-celestial text-[#a68b4c]">Horizon Expedition</span>
+              </button>
+            </div>
+          </div>
+
+          <form class="mt-12 space-y-8">
+            <div>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">First Name</label>
+              <input
+                v-model="form.firstName"
+                type="text"
+                placeholder="Your first name"
+                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+              >
+            </div>
+
+            <div>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">Email</label>
+              <input
+                v-model="form.email"
+                type="email"
+                placeholder="your.email@example.com"
+                class="mt-2 w-full border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+              >
+            </div>
+
+            <div>
+              <label class="block font-serif text-xl font-light tracking-[0.08em] text-[#e8e4d8]">Message</label>
+              <textarea
+                v-model="form.message"
+                placeholder="Tell us the mood, pace, and wild chapter you want to live next..."
+                rows="4"
+                class="mt-2 w-full resize-y border-b border-primary/30 bg-transparent px-0 py-2 text-[#e8e4d8] placeholder:text-[#e8e4d8]/40 focus:border-primary focus:outline-none"
+              />
+            </div>
+
+            <Button type="submit" class="border border-[#a68b4c] bg-[#a68b4c]/10 text-[#e8e4d8] hover:bg-[#a68b4c] hover:text-[#0d0e10] rounded-none px-8 py-3 text-[10px] uppercase tracking-celestial">
+              Submit Briefing to the Concierge.
+            </Button>
+          </form>
+        </div>
+
+        <aside class="rounded-lg border border-[#a68b4c]/35 bg-black/45 p-5 backdrop-blur-sm">
+          <p class="text-[10px] uppercase tracking-celestial text-[#a68b4c]">Celestial Path Summary</p>
+          <div class="mt-4 relative h-[640px] rounded-md border border-primary/20 bg-[#0a0b0d]/80 overflow-hidden">
+            <svg viewBox="0 0 1000 1000" class="h-full w-full p-8">
+              <defs>
+                <filter id="briefingStarGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path
+                v-if="selectedPathD"
+                :d="selectedPathD"
+                fill="none"
+                stroke="#c5aa5e"
+                stroke-width="1.5"
+                stroke-dasharray="6 5"
+                class="opacity-65"
+              />
+
+              <g v-for="node in activeNodes" :key="node.slug">
+                <circle :cx="node.x" :cy="node.y" r="18" fill="transparent" />
+                <circle
+                  :cx="node.x"
+                  :cy="node.y"
+                  :r="selectedActive.includes(node.slug) ? 7 : 3"
+                  :fill="selectedActive.includes(node.slug) ? '#c5aa5e' : 'rgba(197,170,94,0.35)'"
+                  filter="url(#briefingStarGlow)"
+                  :style="selectedActive.includes(node.slug) ? 'filter: drop-shadow(0 0 10px #c5aa5e);' : ''"
+                />
+              </g>
+            </svg>
+
+            <div class="absolute bottom-4 left-4 right-4 border border-primary/25 bg-black/45 px-4 py-3">
+              <p class="text-[10px] uppercase tracking-celestial text-[#a68b4c]">
+                {{ selectedActive.length }} Active Destinations Marked
+              </p>
+              <p class="mt-1 text-xs text-[#e8e4d8]/72">
+                Stars illuminate and routes connect as your path takes shape.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+</template>

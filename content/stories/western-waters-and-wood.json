@@ -1,0 +1,43 @@
+{
+  "slug": "western-waters-and-wood",
+  "collection": "Western Waters",
+  "isHorizon": false,
+  "mapCoords": { "x": 300, "y": 620 },
+  "hero": {
+    "headline": "The Secret Garden",
+    "subHeadline": "From primeval rainforests to high-altitude soapstone carvers.",
+    "videoSrc": "/videos/hero/kakamega-rainforest.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "This is the connoisseur’s play. We bridge the emerald canopy of Kakamega with the artisan heritage of the Kisii Highlands.",
+    "uspIcons": [
+      { "label": "Rainforest Trekking", "iconName": "tree" },
+      { "label": "Soapstone Masterclass", "iconName": "brush" },
+      { "label": "Lake Victoria Islands", "iconName": "waves" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Last Echo",
+      "narrativeBody": "Trekking the Guineo-Congolian rainforest in Kakamega. The air is thick, emerald, and alive with ancient sound.",
+      "mediaUrl": "/images/stories/kakamega-trek.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Sculpted Hills",
+      "narrativeBody": "Visiting the Tabaka quarries of Kisii to see master soapstone carvers transform raw earth into fluid art.",
+      "mediaUrl": "/videos/stories/kisii-carving.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Inland Sea",
+      "narrativeBody": "Exploring Rusinga Island on Lake Victoria. Fossil beds, private island seclusion, and the rhythm of the great lake.",
+      "mediaUrl": "/images/stories/rusinga-island.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "maasai-mara-the-great-theatre",
+    "reasoning": "Yellow plains to emerald forests. A sensory palette swap for the experienced traveler."
+  }
+}

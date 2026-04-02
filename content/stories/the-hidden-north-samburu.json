@@ -1,0 +1,43 @@
+{
+  "slug": "the-hidden-north-samburu",
+  "collection": "Hidden North",
+  "isHorizon": false,
+  "mapCoords": { "x": 580, "y": 450 },
+  "hero": {
+    "headline": "The Hidden North",
+    "subHeadline": "A vertical elevation in both geography and cultural depth. Red earth and ancient ridges.",
+    "videoSrc": "/videos/hero/samburu-elephants.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Laikipia and Samburu represent the frontier of community-led conservation. We focus on helicopter expeditions to the Reteti Sanctuary—a miracle of logistics and empathy.",
+    "uspIcons": [
+      { "label": "Helicopter Expeditions", "iconName": "helicopter" },
+      { "label": "Reteti Sanctuary Access", "iconName": "heart" },
+      { "label": "Special Five Tracking", "iconName": "binoculars" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Red Earth",
+      "narrativeBody": "Encounters with the reticulated giraffe and Grevy’s zebra—species found only above the equator’s red line in this arid paradise.",
+      "mediaUrl": "/images/stories/samburu-species.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Reteti Connection",
+      "narrativeBody": "A private audience with the keepers at Africa’s first community-owned elephant sanctuary. A story of resilience and rescue.",
+      "mediaUrl": "/videos/stories/reteti-care.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Granite Sleep",
+      "narrativeBody": "Falling asleep on a raised 'Star Bed' overlooking the Ewaso Nyiro. Architecture without walls, where the Milky Way is your ceiling.",
+      "mediaUrl": "/images/stories/starbed-samburu.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "roof-of-africa-mt-kenya",
+    "reasoning": "The descent from the alpine peaks into the arid heat of the desert."
+  }
+}

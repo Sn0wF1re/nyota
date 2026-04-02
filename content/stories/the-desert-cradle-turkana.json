@@ -1,0 +1,43 @@
+{
+  "slug": "the-desert-cradle-turkana",
+  "collection": "Desert Cradle",
+  "isHorizon": false,
+  "mapCoords": { "x": 450, "y": 200 },
+  "hero": {
+    "headline": "The Jade Sea Revelation",
+    "subHeadline": "Where the wind never stops and the turquoise water glows in a black lava desert.",
+    "videoSrc": "/videos/hero/turkana-jade.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Our most extreme luxury play. Access is almost exclusively via private charter to the Cradle of Mankind at Koobi Fora.",
+    "uspIcons": [
+      { "label": "Helicopter Crater Landings", "iconName": "plane" },
+      { "label": "Archaeological Expeditions", "iconName": "skull" },
+      { "label": "Nomadic Immersion", "iconName": "users" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Jade Sea",
+      "narrativeBody": "A turquoise mirage in a volcanic desert. Stand on the rim of Central Island and witness a landscape that defies survival.",
+      "mediaUrl": "/images/stories/turkana-water.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Origin Story",
+      "narrativeBody": "Walking the archaeological sites of Koobi Fora. A journey to the beginning of the human narrative.",
+      "mediaUrl": "/videos/stories/koobi-fora.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Desert Nomad",
+      "narrativeBody": "Immersive encounters with the Turkana people. Learning resilience from the masters of the arid North.",
+      "mediaUrl": "/images/stories/turkana-people.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "the-hidden-north-samburu",
+    "reasoning": "The Grand Northern Circuit. Pushing the boundaries of exploration beyond the familiar."
+  }
+}

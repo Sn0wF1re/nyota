@@ -1,0 +1,43 @@
+{
+  "slug": "the-great-rift-valley",
+  "collection": "Great Rift",
+  "isHorizon": false,
+  "mapCoords": { "x": 480, "y": 650 },
+  "hero": {
+    "headline": "The Earth’s Great Scar",
+    "subHeadline": "A corridor of alkaline lakes, ancient volcanic craters, and yellow-fever acacia forests.",
+    "videoSrc": "/videos/hero/rift-flamingos.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "The Rift is the pulse of the country. We focus on walking safaris in yellow-fever acacia forests where you walk among giraffes in total silence.",
+    "uspIcons": [
+      { "label": "Boat Safaris", "iconName": "ship" },
+      { "label": "Walking with Giraffes", "iconName": "footprints" },
+      { "label": "Flamingo Spectacle", "iconName": "cloud" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Floating Safari",
+      "narrativeBody": "Boating among pods of hippos on Lake Naivasha as the eagles cry overhead. Water-based serenity.",
+      "mediaUrl": "/images/stories/naivasha-boat.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Acacia Corridor",
+      "narrativeBody": "Walking with giraffes on Crescent Island. No predators, just the quiet companionship of the tall ones.",
+      "mediaUrl": "/videos/stories/fevertree-walk.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Pink Horizon",
+      "narrativeBody": "The flamingo-lined shores of Lake Nakuru at dawn. A kaleidoscope of shifting pinks and silvers.",
+      "mediaUrl": "/images/stories/nakuru-flamingos.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "maasai-mara-the-great-theatre",
+    "reasoning": "The natural gateway to the Mara. A water-based interlude before the plains drama."
+  }
+}

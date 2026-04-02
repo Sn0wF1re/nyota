@@ -1,0 +1,43 @@
+{
+  "slug": "roof-of-africa-mt-kenya",
+  "collection": "High-Altitude",
+  "isHorizon": false,
+  "mapCoords": { "x": 550, "y": 580 },
+  "hero": {
+    "headline": "The Roof of Africa",
+    "subHeadline": "Cedar forests, high-altitude moorlands, and jagged granite peaks.",
+    "videoSrc": "/videos/hero/mt-kenya-mist.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Alpine Kenya is a quiet, cold, and profoundly exclusive landscape where the fireplace is the center of the evening.",
+    "uspIcons": [
+      { "label": "Trout Fly-Fishing", "iconName": "fish" },
+      { "label": "Alpine Trekking", "iconName": "mountain" },
+      { "label": "Colonial Manor Stays", "iconName": "home" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Alpine Mist",
+      "narrativeBody": "Waking to the sunrise hitting the peaks of Batian and Nelion. The air is crisp, thin, and scented with wild cedar.",
+      "mediaUrl": "/images/stories/mtkenya-peaks.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Trout & Fire",
+      "narrativeBody": "Fly-fishing in high-altitude lakes followed by a private manor dinner by a roaring fire. The ultimate mountain reprieve.",
+      "mediaUrl": "/videos/stories/trout-fishing.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Forest Bongo",
+      "narrativeBody": "Tracking the elusive, striped Bongo in the emerald thickets of the Aberdare canopy. A safari of stillness.",
+      "mediaUrl": "/images/stories/bongo-track.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "the-hidden-north-samburu",
+    "reasoning": "A 45-minute flight that changes the entire world—from lush alpine forest to arid desert heat."
+  }
+}

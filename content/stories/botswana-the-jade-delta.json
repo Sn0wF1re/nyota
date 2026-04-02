@@ -1,0 +1,43 @@
+{
+  "slug": "botswana-the-jade-delta",
+  "isHorizon": true,
+  "collection": "Horizon Series",
+  "mapCoords": { "x": 120, "y": 950 },
+  "hero": {
+    "headline": "Botswana: The Desert Waterworld",
+    "subHeadline": "Where the Kalahari sands meet the floodwaters of the Delta. A landscape designed by elephants.",
+    "videoSrc": "/videos/horizon/okavango-mokoro.mp4"
+  },
+  "theNyotaLens": {
+    "architectNote": "Botswana represents the pinnacle of 'Low-Volume' tourism. We are securing early allocations at the new Singita Elela, focusing on water-based isolation.",
+    "uspIcons": [
+      { "label": "Silent Mokoro Safaris", "iconName": "waves" },
+      { "label": "Private Island Camps", "iconName": "palm-tree" },
+      { "label": "Linyanti Predator Corridor", "iconName": "cat" }
+    ]
+  },
+  "sensoryChapters": [
+    {
+      "chapterTitle": "Chapter I: The Liquid Safari",
+      "narrativeBody": "In the Delta, the vehicle is a wooden canoe. Glide past lilies and reed frogs in total silence. The quietest safari on Earth.",
+      "mediaUrl": "/images/horizon/okavango-water.jpg",
+      "type": "image"
+    },
+    {
+      "chapterTitle": "Chapter II: The Elephant Highway",
+      "narrativeBody": "In the Linyanti, the herds dictate the path. Witness the massive migration of giants between the floodplains.",
+      "mediaUrl": "/videos/horizon/okavango-elephants.mp4",
+      "type": "video"
+    },
+    {
+      "chapterTitle": "Chapter III: The Salt Pan Saltation",
+      "narrativeBody": "The Makgadikgadi Pans. A white, salt-crusted moonscape where the silence is absolute and the stars are blinding.",
+      "mediaUrl": "/images/horizon/botswana-pans.jpg",
+      "type": "image"
+    }
+  ],
+  "pairsWellWith": {
+    "targetSlug": "azure-ancient-lamu",
+    "reasoning": "Pairing the inland delta of Botswana with the Indian Ocean coast of Kenya creates the ultimate 'Dual Water' itinerary."
+  }
+}

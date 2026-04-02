@@ -1,164 +1,127 @@
+<script setup lang="ts">
+import { computed, onMounted, ref } from 'vue'
+import gsap from 'gsap'
+
+const { nodes, navigateToNode } = useUniverse()
+
+const activeNodes = computed(() => nodes.filter(node => !node.isHorizon))
+const featuredSlug = ref(activeNodes.value[0]?.slug ?? '')
+
+const heroRef = ref<HTMLElement | null>(null)
+const mapRef = ref<HTMLElement | null>(null)
+
+const beginJourney = () => {
+  if (featuredSlug.value) {
+    navigateToNode(featuredSlug.value)
+  }
+}
+
+onMounted(async () => {
+  const scrollPlugin = await import('gsap/ScrollTrigger')
+  const ScrollTrigger = scrollPlugin.ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger)
+
+  const reveal = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+  reveal.from('[data-reveal="hero-eyebrow"]', { opacity: 0, y: 24, duration: 1.1 })
+    .from('[data-reveal="hero-title"]', { opacity: 0, y: 28, duration: 1.2 }, '-=0.75')
+    .from('[data-reveal="hero-body"]', { opacity: 0, y: 20, duration: 1.0 }, '-=0.85')
+    .from('[data-reveal="hero-cta"]', { opacity: 0, y: 18, duration: 0.9 }, '-=0.75')
+    .from(mapRef.value, { opacity: 0, y: 40, duration: 1.4 }, '-=0.45')
+
+  const breaths = gsap.utils.toArray<HTMLElement>('.entry-breath')
+  breaths.forEach((block, index) => {
+    gsap.fromTo(
+      block,
+      { opacity: 0, y: 34 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.9,
+        delay: index * 0.08,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 88%',
+          end: 'top 44%',
+          scrub: 0.95
+        }
+      }
+    )
+  })
+})
+</script>
+
 <template>
-  <div class="min-h-screen bg-background text-foreground">
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center bg-foreground text-background overflow-hidden pb-16 pt-8">
-      <!-- Video Background -->
-      <video
-        class="absolute inset-0 w-full h-full object-cover z-0"
-        src="https://res.cloudinary.com/dx2quobqu/video/upload/v1754663776/nyota_bg_video_trim.mp4"
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="auto"
-        poster="https://res.cloudinary.com/dx2quobqu/image/upload/v1755079699/nyota_poster.jpg"
-      ></video>
-      <!-- Tint Overlay -->
-      <div class="absolute inset-0 bg-foreground/70 z-0"></div>
-      <!-- Glow -->
-      <div class="absolute inset-0">
-        <Glow variant="center" class="opacity-30" />
-      </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-8">
-          <div class="text-primary text-sm font-medium tracking-widest uppercase pt-16">
-            Discover the Heart of Africa
-          </div>
-          <h1 class="text-5xl md:text-6xl font-light leading-tight font-serif">
-            Adventure Awaits. <span class="text-primary">Experience</span> Nyota Safari Luxury.
-          </h1>
-          <p class="text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl font-sans">
-            Embark on a journey through Kenya's iconic landscapes with curated safari experiences crafted for the discerning traveler. From the majestic Maasai Mara to the breathtaking Great Rift Valley, every detail is designed to captivate your soul.
-          </p>
-          <div>
-            <NuxtLink to="/destinations" class="inline-block">
-              <Button variant="outline" class="border-primary text-primary hover:bg-primary hover:text-foreground rounded-full cursor-pointer">
-                Book Now
-              </Button>
-            </NuxtLink>
-          </div>
-        </div>
-        <!-- <div class="relative">
-          <Mockup type="responsive" class="w-full aspect-video bg-primary/10 border-primary/20">
-            <div class="w-full h-full bg-gradient-to-br from-primary/20 to-foreground/20 flex items-center justify-center">
-              <NuxtImg src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop" alt="Kenya Safari" class="rounded-md object-cover w-full h-64" />
-            </div>
-          </Mockup>
-        </div> -->
-      </div>
-      <div class="absolute top-4 right-4 z-20">
-        <Button variant="outline" class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-foreground rounded-full px-6 py-3 font-medium">
-          Book Now
-        </Button>
-      </div>
-    </section>
-
-    <!-- Destinations Preview -->
-    <section class="py-24 bg-background">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-6xl font-light mb-6 text-foreground font-serif">
-            Our <span class="text-primary">Destinations</span>
-          </h2>
-          <p class="text-lg text-foreground/70 max-w-3xl mx-auto font-sans">
-            Discover safari tours Kenya, African safari experiences, and luxury safari Kenya adventures across East Africa's most spectacular wildlife destinations.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card
-            v-for="([key, country], idx) in Object.entries(countries)"
-            :key="country.name"
-            class="group overflow-hidden border-primary/20 hover:border-primary transition-all"
-          >
-            <CardHeader class="p-0">
-              <NuxtImg :src="country.image" :alt="country.name" class="w-full h-40 object-cover rounded-t-md" />
-            </CardHeader>
-            <CardContent class="p-4 flex flex-col gap-3 items-center">
-              <CardTitle class="text-lg font-semibold text-foreground mb-2 font-serif">{{ country.name }}</CardTitle>
-              <CardDescription class="text-foreground/70 text-sm font-sans text-center">{{ country.description }}</CardDescription>
-              <div class="w-full flex justify-center">
-                <NuxtLink v-if="key === 'kenya'" :to="`/destinations/${key}`" class="w-full flex justify-center">
-                  <Button size="sm" class="mt-2 bg-primary text-foreground rounded-full px-6 py-2 font-medium shadow hover:bg-primary/90 transition cursor-pointer">Explore Kenya</Button>
-                </NuxtLink>
-                <span v-else class="inline-block mt-2 px-4 py-2 rounded-full bg-primary/10 border border-primary text-primary text-xs font-semibold shadow">Coming Soon</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Travel with Nyota -->
-    <section class="py-24 bg-foreground text-background">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-6xl font-light mb-6 font-serif">
-            Why Travel with Nyota
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card v-for="item in whyChooseUs" :key="item.title" class="flex flex-col items-center p-6 border-primary/20 bg-foreground">
-            <CardHeader class="flex flex-col items-center p-0 mb-2">
-              <component :is="item.icon" class="w-8 h-8 text-primary mb-4" />
-              <CardTitle class="text-lg font-semibold text-primary mb-2 font-serif text-center">{{ item.title }}</CardTitle>
-            </CardHeader>
-            <CardContent class="p-0">
-              <CardDescription class="text-background/80 text-sm text-center font-sans">{{ item.description }}</CardDescription>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating Contact -->
-    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
-      <a href="mailto:info@nyotasafari.com" target="_blank" rel="noopener noreferrer" class="w-full">
-        <Button
-          size="sm"
-          class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center cursor-pointer"
-        >
-          <LucideMail class="w-4 h-4 mr-2" />
-          Email
-        </Button>
-      </a>
-      <NuxtLink to="/contact" class="w-full">
-        <Button
-          size="sm"
-          class="w-full bg-primary hover:bg-primary/90 text-foreground rounded-full shadow-lg flex items-center justify-center cursor-pointer"
-        >
-          <LucidePhone class="w-4 h-4 mr-2" />
-          Contact
-        </Button>
-      </NuxtLink>
+  <main class="dark min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 opacity-60">
+      <div class="absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-primary/8 blur-3xl" />
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(197,170,94,0.09),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(247,246,243,0.06),transparent_28%)]" />
+      <div class="manifesto-grain absolute inset-0" />
+      <div class="manifesto-vignette absolute inset-0" />
     </div>
-  </div>
+
+    <section class="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-12 pt-18 md:px-10 lg:px-12">
+      <header ref="heroRef" class="max-w-4xl">
+        <p data-reveal="hero-eyebrow" class="mb-5 text-[10px] uppercase tracking-celestial text-primary">
+          Nyota Safari 2026
+        </p>
+        <h1 data-reveal="hero-title" class="font-serif text-5xl italic leading-tight text-foreground md:text-7xl lg:text-8xl">
+          Celestial Entry
+        </h1>
+        <p data-reveal="hero-body" class="mt-8 max-w-2xl text-sm uppercase tracking-monograph text-foreground/72 md:text-base">
+          A monograph in motion. Trace the constellation to discover each sanctuary, each narrative, and each chapter of the journey.
+        </p>
+        <button
+          data-reveal="hero-cta"
+          type="button"
+          @click="beginJourney"
+          class="mt-10 inline-flex items-center border border-primary px-8 py-3 text-[10px] uppercase tracking-celestial text-primary transition hover:bg-primary hover:text-background"
+        >
+          Begin the Journey
+        </button>
+      </header>
+
+      <section ref="mapRef" class="entry-breath mt-14 grid flex-1 gap-6 lg:grid-cols-[1fr_290px]">
+        <div class="entry-breath h-[60vh] min-h-[460px] rounded-lg border border-primary/25 bg-background/60 p-3 md:h-[66vh]">
+          <CelestialMap
+            :current-coords="{ x: 500, y: 500 }"
+            :target-slug="featuredSlug"
+          />
+        </div>
+
+        <aside class="entry-breath rounded-lg border border-border/45 bg-background/45 p-5 backdrop-blur-sm">
+          <p class="text-[10px] uppercase tracking-celestial text-primary">Story Index</p>
+          <ul class="mt-5 space-y-3">
+            <li v-for="node in activeNodes" :key="node.slug">
+              <button
+                type="button"
+                @click="featuredSlug = node.slug"
+                class="w-full border px-3 py-3 text-left transition"
+                :class="featuredSlug === node.slug
+                  ? 'border-primary bg-primary/12 text-foreground'
+                  : 'border-border/60 text-foreground/75 hover:border-primary/60 hover:text-foreground'"
+              >
+                <span class="block font-serif text-lg italic">{{ node.name }}</span>
+                <span class="mt-1 block text-[10px] uppercase tracking-monograph text-primary">{{ node.sub }}</span>
+              </button>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </section>
+  </main>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { LucidePhone, LucideMail, LucideAward, LucideUsers, LucideShield, LucideCamera } from 'lucide-vue-next'
-import { countries } from '@/data/countries'
+<style scoped>
+.manifesto-grain {
+  background-image:
+    radial-gradient(circle at 24% 24%, rgba(197, 170, 94, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 78% 76%, rgba(247, 246, 243, 0.05) 0%, transparent 34%),
+    repeating-radial-gradient(circle at 44% 58%, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px);
+}
 
-const whyChooseUs = [
-  {
-    icon: LucideAward,
-    title: 'Luxury Lodges',
-    description: 'Premium accommodations in pristine locations'
-  },
-  {
-    icon: LucideUsers,
-    title: 'Expert Guides',
-    description: 'Local expertise and wildlife knowledge'
-  },
-  {
-    icon: LucideShield,
-    title: 'Tailored Experiences',
-    description: 'Customized itineraries for your preferences'
-  },
-  {
-    icon: LucideCamera,
-    title: 'Wildlife Encounters',
-    description: 'Unforgettable moments with African wildlife'
-  }
-]
-</script>
+.manifesto-vignette {
+  background: radial-gradient(circle at center, transparent 52%, rgba(0, 0, 0, 0.3) 100%);
+}
+</style>
