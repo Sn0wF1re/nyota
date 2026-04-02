@@ -3,7 +3,7 @@
 ## Phase 1 — Foundation
 
 * [ ] Clean folder structure
-* [ ] Setup composables (stories, journals) (partial: stories/universe complete, journals still route-driven)
+* [x] Setup composables (stories, journals)
 * [x] Create base layout components
 
 ## Phase 2 — Stories
@@ -30,7 +30,7 @@
 
 * [x] Cinematic hero
 * [x] Entry into universe
-* [ ] Featured story/journal
+* [x] Featured story/journal
 
 ## Phase 6 — Polish
 
