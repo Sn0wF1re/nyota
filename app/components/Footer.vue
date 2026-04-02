@@ -127,7 +127,7 @@ const stitchedPreviewNode = computed(() => {
 
 <style scoped>
 .horizon-fade {
-  background: radial-gradient(circle at 50% 28%, rgba(87, 72, 32, 0.45) 0%, rgba(19, 17, 13, 0.62) 35%, #0a0b0d 100%);
+  background: radial-gradient(circle at 50% 28%, rgba(87, 72, 32, 0.45) 0%, rgba(19, 17, 13, 0.62) 35%, var(--triad-midnight) 100%);
 }
 
 .horizon-grain {
