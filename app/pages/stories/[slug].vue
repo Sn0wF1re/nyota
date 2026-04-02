@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import gsap from 'gsap'
+import { useJournals } from '@/composables/useJournals'
 import {
   ShieldCheck,
   Eye,
@@ -30,6 +31,7 @@ import {
 
 const route = useRoute()
 const { markVisited } = useUniverse()
+const { fetchRelatedJournalForStory, resolveJournalPath, asJournalRecord } = useJournals()
 const storySlug = computed(() => String(route.params.slug))
 
 // 1. Dynamic Data Fetching strictly from the Stories collection
@@ -50,7 +52,7 @@ const { data: relatedStory } = await useAsyncData(
 
 const { data: relatedJournal } = await useAsyncData(
   `journal-related-${route.params.slug}`,
-  () => queryCollection('journal').where('relatedStory', '=', storySlug.value).first(),
+  () => fetchRelatedJournalForStory(storySlug.value),
   { watch: [storySlug] }
 )
 
@@ -100,13 +102,10 @@ const resolveFeatureIcon = (iconName: string) => {
 }
 
 const relatedJournalPath = computed(() => {
-  const journal = relatedJournal.value as Record<string, unknown> | null
-  if (!journal) return ''
-  if (typeof journal.path === 'string') return journal.path
-  if (typeof journal._path === 'string') return journal._path
-  if (typeof journal.slug === 'string') return `/journal/${journal.slug}`
-  return ''
+  return resolveJournalPath(asJournalRecord(relatedJournal.value))
 })
+
+const relatedJournalData = computed(() => asJournalRecord(relatedJournal.value))
 
 onMounted(async () => {
   markVisited(String(route.params.slug))
@@ -150,7 +149,7 @@ onMounted(async () => {
     <section v-if="relatedJournal && relatedJournalPath" class="border-y border-primary/15 bg-card/36 px-6 py-16 md:px-24">
       <div class="mx-auto max-w-5xl">
         <p class="text-[10px] uppercase tracking-celestial text-primary">Field Editorial</p>
-        <h3 class="mt-4 font-serif text-4xl italic text-foreground">{{ relatedJournal.title }}</h3>
+        <h3 class="mt-4 font-serif text-4xl italic text-foreground">{{ relatedJournalData.title }}</h3>
         <NuxtLink
           :to="relatedJournalPath"
           class="mt-7 inline-block border border-primary px-6 py-3 text-[10px] uppercase tracking-celestial text-primary transition hover:bg-primary hover:text-background"

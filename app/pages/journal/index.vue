@@ -1,26 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useJournals } from '@/composables/useJournals'
+
+const { fetchAllJournals, resolveJournalPath, asJournalList } = useJournals()
 
 const { data: journals } = await useAsyncData('journal-index', () =>
-  queryCollection('journal').all()
+  fetchAllJournals()
 )
-
-type JournalRecord = {
-  title?: string
-  path?: string
-  slug?: string
-  readingTime?: string
-  category?: string
-  geographicFocus?: string
-}
-
-const journalItems = computed(() => (journals.value || []) as JournalRecord[])
-
-const resolveJournalPath = (journal: JournalRecord) => {
-  if (typeof journal.path === 'string') return journal.path
-  if (typeof journal.slug === 'string') return `/journal/${journal.slug}`
-  return '/journal'
-}
+const journalItems = computed(() => asJournalList(journals.value))
 </script>
 
 <template>
@@ -56,7 +43,7 @@ const resolveJournalPath = (journal: JournalRecord) => {
             <span v-if="journal.geographicFocus">• {{ journal.geographicFocus }}</span>
           </p>
           <NuxtLink
-            :to="resolveJournalPath(journal)"
+            :to="resolveJournalPath(journal) || '/journal'"
             class="mt-8 inline-block border border-primary px-6 py-3 text-[10px] uppercase tracking-celestial text-primary transition hover:bg-primary hover:text-background"
           >
             Read Journal

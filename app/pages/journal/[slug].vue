@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useJournals } from '@/composables/useJournals'
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug || ''))
+const { fetchJournalBySlug, asJournalRecord } = useJournals()
 
 const { data: journal } = await useAsyncData(
   `journal-${slug.value}`,
-  () => queryCollection('journal').path(`/journal/${slug.value}`).first(),
+  () => fetchJournalBySlug(slug.value),
   { watch: [slug] }
 )
 
@@ -21,15 +23,7 @@ type StoryItem = {
   }
 }
 
-type JournalRecord = {
-  title?: string
-  category?: string
-  readingTime?: string
-  geographicFocus?: string
-  relatedStory?: string
-}
-
-const journalData = computed(() => (journal.value || {}) as JournalRecord)
+const journalData = computed(() => asJournalRecord(journal.value))
 
 const relatedStorySlug = computed(() => {
   return typeof journalData.value.relatedStory === 'string' ? journalData.value.relatedStory : ''
