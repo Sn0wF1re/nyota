@@ -28,7 +28,7 @@
         <!-- Story CTA -->
         <div class="hidden md:block">
           <NuxtLink to="/contact">
-            <Button variant="outline" class="cursor-pointer rounded-none border-bone/60 text-foreground hover:text-primary">
+            <Button variant="outline" class="cursor-pointer rounded-none border-bone/60 text-foreground hover:text-triad-bone">
               Craft Your Path
             </Button>
           </NuxtLink>
